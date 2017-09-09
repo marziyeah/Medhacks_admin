@@ -36,42 +36,49 @@ angular
     url: '/buttons',
     templateUrl: 'views/components/buttons.html',
     ncyBreadcrumb: {
-      label: 'Buttons'
+      label: 'PCP'
     }
   })
   .state('app.components.social-buttons', {
     url: '/social-buttons',
     templateUrl: 'views/components/social-buttons.html',
     ncyBreadcrumb: {
-      label: 'Social Buttons'
+      label: 'Oncologist'
     }
   })
   .state('app.components.cards', {
     url: '/cards',
     templateUrl: 'views/components/cards.html',
     ncyBreadcrumb: {
-      label: 'Cards'
+      label: 'Radiologist'
     }
   })
   .state('app.components.forms', {
     url: '/forms',
     templateUrl: 'views/components/forms.html',
     ncyBreadcrumb: {
-      label: 'Forms'
+      label: 'Ophthalmologist'
     }
   })
   .state('app.components.switches', {
     url: '/switches',
     templateUrl: 'views/components/switches.html',
     ncyBreadcrumb: {
-      label: 'Switches'
+      label: 'Dentist'
     }
   })
   .state('app.components.tables', {
     url: '/tables',
     templateUrl: 'views/components/tables.html',
     ncyBreadcrumb: {
-      label: 'Tables'
+      label: 'Insurance Information'
+    }
+  })
+  .state('app.components.patient_history', {
+    url: '/font-awesome',
+    templateUrl: 'views/components/patient_history.html',
+    ncyBreadcrumb: {
+      label: 'Patient History'
     }
   })
   .state('app.forms', {
@@ -150,7 +157,7 @@ angular
     url: '/immunizations',
     templateUrl: 'views/immunizations.html',
     ncyBreadcrumb: {
-      label: 'Charts'
+      label: 'Immunizations'
     },
     controller: "MainController"
   })
@@ -158,7 +165,7 @@ angular
     url: '/medicalImaging',
     templateUrl: 'views/medical_imaging.html',
     ncyBreadcrumb: {
-      label: 'Charts'
+      label: 'Medical Imaging'
     },
     controller: "MainController"
   })
