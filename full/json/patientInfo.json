@@ -1,6 +1,10 @@
 {
     "firstName": "John",
     "lastName": "Dickens",
+    "gender": "male",
+    "bloodType": "A+",
+    "height":"6.6 ft",
+    "weight":"170 lbs",
     "phone": "443-410-3256",
     "email": "john.dc86@gmail.com",
     "emergencyContact": "Sarah Jones",

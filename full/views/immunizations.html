@@ -38,13 +38,13 @@
     <div class="col-sm-6">
         <div class="card card-accent-success">
             <div class="card-header">
-                Card with label
+                <strong>Immunizations</strong>
                 <span class="badge badge-pill badge-danger float-right">{{immunizationRecords.length}}</span>
             </div>
             <div ng-repeat="immunization in immunizationRecords">
                 <div class="card-body">
                     <div ng-if="immunization.name">
-                        Type: {{immunization.name}}
+                        Name: {{immunization.name}}
                     </div>
                     <div ng-if="immunization.givenBy">
                         Administered By: {{immunization.givenBy}}
