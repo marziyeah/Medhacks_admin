@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-sm-6">
+
+        <div class="card card-accent-success">
+            <div class="card-header">
+                <small>Add a new</small>
+                <strong>Referral</strong>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="company">Referring Doctor</label>
+                    <input type="text" class="form-control" ng-model="immunizations.name" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="street">Referral Start Date</label>
+                    <input type="text" class="form-control" ng-model="immunizations.givenBy" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Referral Expiration Date</label>
+                    <input type="text" class="form-control" ng-model="immunizations.dosage" placeholder="">
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="postal-code">Number of Visits</label> <i class="icon-calendar"></i>
+                        <input type="date" class="form-control" ng-model="immunizations.givenDate">
+                    </div>
+                </div>
+                <button ng-click="onSubmit('immunizations', immunizations)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                <button type="reset" ng-click="reset('immunizations')" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card card-accent-success">
+            <div class="card-header">
+                <strong>Referrals</strong>
+                <span class="badge badge-pill badge-danger float-right">{{immunizationRecords.length}}</span>
+            </div>
+            <div ng-repeat="immunization in immunizationRecords">
+                <div class="card-body">
+                    <div ng-if="immunization.name">
+                        Name: {{immunization.name}}
+                    </div>
+                    <div ng-if="immunization.givenBy">
+                        Administered By: {{immunization.givenBy}}
+                    </div>
+                    <div ng-if="immunization.dosage">
+                        Dosage: {{immunization.dosage}}
+                    </div>
+                    <div ng-if="immunization.givenDate">
+                        Given Date: {{immunization.givenDate}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -81,6 +81,27 @@ angular
       label: 'Patient History'
     }
   })
+  .state('app.components.referrals', {
+    url: '/font-awesome',
+    templateUrl: 'views/components/referrals.html',
+    ncyBreadcrumb: {
+      label: 'Referrals'
+    }
+  })
+  .state('app.components.medications', {
+    url: '/font-awesome',
+    templateUrl: 'views/components/medications.html',
+    ncyBreadcrumb: {
+      label: 'Medications'
+    }
+  })
+  .state('app.components.Glasses', {
+    url: '/font-awesome',
+    templateUrl: 'views/components/Glasses.html',
+    ncyBreadcrumb: {
+      label: 'Glasses'
+    }
+  })
   .state('app.forms', {
     url: '/forms',
     templateUrl: 'views/forms.html',

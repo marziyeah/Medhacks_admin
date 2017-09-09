@@ -1,134 +1,87 @@
-<div ng-controller="MainController">
-
-    <div class="animated fadeIn">
-        <div class="row">
-            <div class="col-sm-12 col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        Doctor Information
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <p>First Name:</p>
-                                <p>Last Name:</p>
-                                <p>Office Phone:</p>
-								<p>Cell Phone:</p>
-                                <p>Email:</p>
-								<p>Office hours:</p>
-								<p>Office address:</p>
-                                
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <p>{{patientInfo.firstName}}</p>
-                                <p>{{patientInfo.lastName}}</p>
-                                <p>{{patientInfo.phone}}</p>
-                                <p>{{patientInfo.email}}</p>
-                                <p>{{patientInfo.emergencyContact}}</p>
-                                <p>{{patientInfo.emergencyPhoneNumber}}</p>
-                            </div>
-                        </div>
-                    </div>
+<div class="animated fadeIn">
+    <div class="card-columns cols-2">
+        <div class="card">
+            <div class="card-header">
+                <i class="icon-graph icon-bg"></i>Line Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
                 </div>
+            </div>
+            <div class="card-body" ng-controller="LineCtrl">
+                <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick"></canvas>
             </div>
         </div>
-
-        <div class="row">
-            <!--/.col-->
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Appointment Date: 09/09/2017
-                        <span class="badge badge-pill badge-danger float-right"></span>
-                    </div>
-                    <div class="card-body">
-                        <p>Reason for visit: </p>
-                        <p>Diagnosis</p>
-                        <p>Plan</p>
-                        
-                    </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="icon-graph icon-bg"></i>Bar Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
                 </div>
             </div>
-
-            <!--/.col-->
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Appointment Date: 09/16/2017
-                        <span class="badge badge-pill badge-danger float-right"></span>
-                    </div>
-                    <div class="card-body">
-                        <p>Reason for visit: </p>
-                        <p>Diagnosis</p>
-                        <p>Plan</p>
-                    </div>
-                </div>
+            <div class="card-body" ng-controller="BarCtrl">
+                <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels">
+                </canvas>
             </div>
         </div>
-       
-      <div class="row">
-            <!--/.col-->
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Appointment Date: 10/09/2017
-                        <span class="badge badge-pill badge-danger float-right"></span>
-                    </div>
-                    <div class="card-body">
-                        <p>Reason for visit: </p>
-                        <p>Diagnosis</p>
-                        <p>Plan</p>
-                        
-                    </div>
+        <div class="card">
+            <div class="card-header">
+                Doughnut Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
                 </div>
             </div>
-
-            <!--/.col-->
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Appointment Date: 010/16/2017
-                        <span class="badge badge-pill badge-danger float-right"></span>
-                    </div>
-                    <div class="card-body">
-                        <p>Reason for visit: </p>
-                        <p>Diagnosis</p>
-                        <p>Plan</p>
-                    </div>
-                </div>
+            <div class="card-body" ng-controller="DoughnutCtrl">
+                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+                </canvas>
             </div>
         </div>
-       <div class="row">
-            <!--/.col-->
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Appointment Date: 11/09/2017
-                        <span class="badge badge-pill badge-danger float-right"></span>
-                    </div>
-                    <div class="card-body">
-                        <p>Reason for visit: </p>
-                        <p>Diagnosis</p>
-                        <p>Plan</p>
-                        
-                    </div>
+        <div class="card">
+            <div class="card-header">
+                Radar Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
                 </div>
             </div>
-
-            <!--/.col-->
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Appointment Date: 11/16/2017
-                        <span class="badge badge-pill badge-danger float-right"></span>
-                    </div>
-                    <div class="card-body">
-                        <p>Reason for visit: </p>
-                        <p>Diagnosis</p>
-                        <p>Plan</p>
-                    </div>
-                </div>
+            <div class="card-body" ng-controller="RadarCtrl">
+                <canvas id="radar" class="chart chart-radar" chart-data="data" chart-labels="labels">
+                </canvas>
             </div>
         </div>
-       
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-asterisk icon-bg"></i>Pie Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
+                </div>
+            </div>
+            <div class="card-body" ng-controller="PieCtrl">
+                <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels">
+                </canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Polar Area Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
+                </div>
+            </div>
+            <div class="card-body" ng-controller="PolarAreaCtrl">
+                <canvas id="polar-area" class="chart chart-polar-area" chart-data="data" chart-labels="labels">
+                </canvas>
+            </div>
+        </div>
+    </div>
 </div>
