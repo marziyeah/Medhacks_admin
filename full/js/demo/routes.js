@@ -32,6 +32,13 @@ angular
       label: 'Components'
     }
   })
+.state('app.components.calendar', {
+    templateUrl: 'views/common/calendar.html',
+    url: '/calendar',
+    ncyBreadcrumb: {
+      label: 'Calendar'
+    }
+  })
   .state('app.components.buttons', {
     url: '/buttons',
     templateUrl: 'views/components/buttons.html',
