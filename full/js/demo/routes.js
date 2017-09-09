@@ -146,4 +146,20 @@ angular
       }]
     }
   })
+  .state('app.immunizations', {
+    url: '/immunizations',
+    templateUrl: 'views/immunizations.html',
+    ncyBreadcrumb: {
+      label: 'Charts'
+    },
+    controller: "MainController"
+  })
+  .state('app.medicalImaging', {
+    url: '/medicalImaging',
+    templateUrl: 'views/medical_imaging.html',
+    ncyBreadcrumb: {
+      label: 'Charts'
+    },
+    controller: "MainController"
+  })
 }]);

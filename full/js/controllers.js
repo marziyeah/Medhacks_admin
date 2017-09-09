@@ -5,6 +5,28 @@ function MainController($scope, MainFactory) {
         $scope.patientInfo = data;
     })
 
-    // $scope.getPatientInfo = function() {
-    // }
+    MainFactory.getImmunizationRecords().then(function(data) {
+        $scope.immunizationRecords = data;
+    })
+
+    MainFactory.getMedicalImaging().then(function(data) {
+        $scope.medicalImaging = data;
+    })
+
+    $scope.onSubmit = function(type, data) {
+        MainFactory.addImmunization(type, data).then(function(data) {
+            $scope.immunizationRecords = data;
+        });
+        $scope[type] = {};
+    }
+
+    $scope.reset = function(type) {
+        $scope[type] = {};
+    }
+
+    $scope.getAllPhi = function() {
+        MainFactory.getAllPhi().then(function(PHI) {
+            $scope.allPhi = PHI;
+        })
+    }
 }
