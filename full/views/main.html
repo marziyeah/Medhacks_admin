@@ -1,18 +1,21 @@
 <div ng-controller="MainController">
 
     <div class="animated fadeIn">
-        <div class="row">
+
+       <div class="row">
             <div class="col-sm-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
                         Basic Profile
                     </div>
                     <div class="card-body">
+                        
                         <div class="row">
-                            <div class="col-sm-6 col-md-6">
+                            <div class="col-sm-4 col-md-4">
                                 <p>First Name:</p>
                                 <p>Last Name:</p>
                                 <p>Gender:</p>
+                                <p>Date Of Birth</p>
                                 <p>Blood Type:</p>
                                 <p>Height:</p>
                                 <p>Weight:</p>
@@ -20,11 +23,13 @@
                                 <p>Email:</p>
                                 <p>Emergency Contact:</p>
                                 <p>Emergency Contact Phone Number:</p>
+                                <p>Allergies and Intolerances:</p>
                             </div>
-                            <div class="col-sm-6 col-md-6">
+                            <div class="col-sm-4 col-md-4">
                                 <p>{{patientInfo.firstName}}</p>
                                 <p>{{patientInfo.lastName}}</p>
                                 <p>{{patientInfo.gender}}</p>
+                                <p>{{patientInfo.dob}}</p>
                                 <p>{{patientInfo.bloodType}}</p>
                                 <p>{{patientInfo.height}}</p>
                                 <p>{{patientInfo.weight}}</p>
@@ -32,114 +37,32 @@
                                 <p>{{patientInfo.email}}</p>
                                 <p>{{patientInfo.emergencyContact}}</p>
                                 <p>{{patientInfo.emergencyPhoneNumber}}</p>
+                                <p>{{patientInfo.allergy}}</p>
                             </div>
+                             <div class="col-sm-4 col-md-4" id="profile-container">
+                            <image  src="img/profile-pictures.png" />
+                             </div>
+
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!--/.col-->
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Medications
-                        <span class="badge badge-pill badge-danger float-right">4</span>
-                    </div>
-                    <div class="card-body">
-                        <p>Ambian</p>
-                        <p>Amoxicicillin</p>
-                        <p>Advil</p>
-                        <p>Tynol</p>
-                    </div>
-                </div>
-            </div>
-
-            <!--/.col-->
-            <div class="col-sm-6 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Allergies and Intolerances
-                        <span class="badge badge-pill badge-danger float-right">4</span>
-                    </div>
-                    <div class="card-body">
-                        <p>Pollen</p>
-                        <p>peanuts</p>
-                        <p>glucose</p>
-                        <p>Penicillin</p </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        Eyeglass Prescription
-                    </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                            
-                                    
-                                    <div class="card-body">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr class="card-header">
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th>Sph</th>
-                                                    <th>Cyl</th>
-                                                    <th>Axis</th>
-                                                    <th>Add</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>D.V</td>
-                                                    <td>OD</td>
-                                                    <td>-1.5</td>
-                                                    <td>-1.0</td>
-                                                    <td>110</td>
-                                                    <td>+2.5</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>OS</td>
-                                                    <td>-1.25</td>
-                                                    <td>-0.5</td>
-                                                    <td>120</td>
-                                                    <td>+2.5</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>N.V</td>
-                                                    <td>OD</td>
-                                                    <td>+1.50</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>OS</td>
-                                                    <td>+1.50</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                       
-                                        </ul>
-                                    </div>
-                              
+            
+                    <div class="row">
+                       <div class="col-sm-4 col-md-4">
+                                <p>Street: {{patientInfo.street}}</p>
                             </div>
-                            <!--/.col-->
-                        </div>
-                    
+                            <div class="col-sm-4 col-md-4">
+                                <p>City: {{patientInfo.city}}</p>
+                               
+                            </div>
+                            <div class="col-sm-4 col-md-4">
+                                <p>Zip Code: {{patientInfo.zip}}</p>
+                               
+                            </div>
+
+                     </div>
+
+                    </div>
                 </div>
             </div>
-
-        </div>
+       </div>       
     </div>
 </div>

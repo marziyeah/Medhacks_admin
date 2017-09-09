@@ -6,11 +6,11 @@
             </li>
 
             <li class="divider"></li>
-			 <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" ui-sref-active="active" ui-sref="app.components.patient_history"><i class="icon-calculator"></i> Patient History <span class="badge badge-info"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" ui-sref-active="active" ui-sref="app.components.tables"><i class="icon-pie-chart"></i> Insurance Information </a>
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.components.tables"><i class="icon-pie-chart"></i> Insurance Info </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" ui-sref-active="active" ui-sref="app.medicalImaging"><i class="icon-pie-chart"></i> Medical Imaging </a>
@@ -18,12 +18,15 @@
             <li class="nav-item">
                 <a class="nav-link" ui-sref-active="active" ui-sref="app.immunizations"><i class="icon-pie-chart"></i> Immunizations </a>
             </li>
-			
-			<li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.appointments"><i class="icon-pie-chart"></i> Appointments</a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" ui-sref-active="active" ui-sref="app.components.calendar"><i class="icon-pie-chart"></i> Calendar </a>
             </li>
-            
-			<li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">
+
+            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">
                 <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.components')}" href="#"><i class="icon-puzzle"></i> Doctors</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
@@ -41,15 +44,11 @@
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.components.switches"><i class="icon-puzzle"></i> Dentist</a>
                     </li>
-					<li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.components.forms"><i class="icon-puzzle"></i> Psychologist </a>
                     </li>
-					
-					
-					
-					
-					
-        
-		
+                </ul>
+            </li>
+        </ul>
     </nav>
 </div>

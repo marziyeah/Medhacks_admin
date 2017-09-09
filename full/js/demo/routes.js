@@ -176,4 +176,12 @@ angular
     },
     controller: "MainController"
   })
+  .state('app.appointments', {
+    url: '/appointments',
+    templateUrl: 'views/components/appointments.html',
+    ncyBreadcrumb: {
+      label: 'Appointments'
+    },
+    controller: "MainController"
+  })
 }]);
