@@ -30,5 +30,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mrholek/CoreUI-AngularJS/issues"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
   }
 }
