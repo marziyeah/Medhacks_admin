@@ -17,12 +17,20 @@ function MainFactory($http, $q) {
 
     ];
 
+    var headers = {
+        // 'Access-Control-Request-Method' : "*",
+        "Access-Control-Allow-Origin": "*",
+        'Content-Type': 'application/json',
+    }
+
     var MainFactory = {
         getPatientInfo: getPatientInfo,
         getImmunizationRecords: getImmunizationRecords,
         addImmunization: addImmunization,
         getMedicalImaging: getMedicalImaging,
         getAllPhi: getAllPhi,
+        generateToken: generateToken,
+        unlockSecretInfo: unlockSecretInfo,
     };
 
     return MainFactory;
@@ -34,27 +42,13 @@ function MainFactory($http, $q) {
     }
 
     function addImmunization(data) {
-        var headers = {
-            // 'Access-Control-Request-Method' : "*",
-            "Access-Control-Allow-Origin": "*",
-            'Content-Type': 'application/json',
-        }
-        console.log(data)
         return $http({method: 'POST', url: 'http://localhost:8000/immunizations', headers: headers, data: {'immunization': data}}).then((success) => {
-            console.log('dat success', success)
-            // immunizations.concat(data);
-            // return immunizations.data;
+            return success.data;
         });
     }
 
     function getImmunizationRecords() {
-        var headers = {
-            // 'Access-Control-Request-Method' : "*",
-            "Access-Control-Allow-Origin": "*",
-            'Content-Type': 'application/x-www-form-urlencoded',
-        }
         return $http({method: 'GET', url: 'http://localhost:8000/immunizations', headers: headers}).then((immunizations) => {
-            console.log(immunizations.data)
             return immunizations.data;
         });
     };
@@ -70,5 +64,25 @@ function MainFactory($http, $q) {
             clinicalDocumentation: clinicalDocumentation,
         }
         return $q.resolve(allPhi);
+    }
+
+    function generateToken(pin) {
+      return $http({method:'POST', url: "http://localhost:8000/generateToken", headers: headers, data: {'pin': pin}}).then((success) => {
+          return success.data.token;
+      })
+    }
+
+    function unlockSecretInfo(token, pin) {
+      var data = {
+        token: token,
+        pin: pin
+      };
+
+      return $http({method:'POST', url: "http://localhost:8000/verifySecretCombo", headers: headers, data: data}).then((success) => {
+        return success.data.url;
+      }, (failure) => {
+        console.log('lululul')
+        return $q.reject(failure.data.errors);
+      })
     }
 }
