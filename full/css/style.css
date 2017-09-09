@@ -7339,13 +7339,6 @@ base-chart.chart {
 .navbar-nav .active.dropdown-toggle:hover {
   color: #29363d; }
 
-.style1{
-  padding: 16px 16px 16px 20px;
-  
-}
-.style2{
-  padding-bottom: 16px;
-}
 .navbar-divider {
   background-color: rgba(0, 0, 0, 0.075); }
 
