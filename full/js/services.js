@@ -1,14 +1,7 @@
 // controller.js
 angular.module('app').factory("MainFactory", ['$http', '$q', MainFactory]);
 function MainFactory($http, $q) {
-    let immunizations = [
-        {
-            name: "hepatitis B",
-            givenBy: "Marzi Kho",
-            dosage: "10ml",
-            givenDate: "12/02/2016"
-        }
-    ];
+    let immunizations;
 
     let medicalImaging = [
         {
@@ -18,7 +11,11 @@ function MainFactory($http, $q) {
             url: "http://localhost:8042/osimis-viewer/app/index.html?study=17dba82f-d91dd6eb-84dc046b-81131b64-ad1eb0ed"
         }
 
-    ]
+    ];
+
+    let clinicalDocumentation = [
+
+    ];
 
     var MainFactory = {
         getPatientInfo: getPatientInfo,
@@ -36,14 +33,31 @@ function MainFactory($http, $q) {
         })
     }
 
-    function addImmunization(type, data) {
-        immunizations = immunizations.concat(data);
-        return $q.resolve(immunizations);
+    function addImmunization(data) {
+        var headers = {
+            // 'Access-Control-Request-Method' : "*",
+            "Access-Control-Allow-Origin": "*",
+            'Content-Type': 'application/json',
+        }
+        console.log(data)
+        return $http({method: 'POST', url: 'http://localhost:8000/immunizations', headers: headers, data: {'immunization': data}}).then((success) => {
+            console.log('dat success', success)
+            // immunizations.concat(data);
+            // return immunizations.data;
+        });
     }
 
     function getImmunizationRecords() {
-        return $q.resolve(immunizations);
-    }
+        var headers = {
+            // 'Access-Control-Request-Method' : "*",
+            "Access-Control-Allow-Origin": "*",
+            'Content-Type': 'application/x-www-form-urlencoded',
+        }
+        return $http({method: 'GET', url: 'http://localhost:8000/immunizations', headers: headers}).then((immunizations) => {
+            console.log(immunizations.data)
+            return immunizations.data;
+        });
+    };
 
     function getMedicalImaging() {
         return $q.resolve(medicalImaging);
@@ -53,6 +67,7 @@ function MainFactory($http, $q) {
         var allPhi = {
             immunizations: immunizations,
             medicalImaging: medicalImaging,
+            clinicalDocumentation: clinicalDocumentation,
         }
         return $q.resolve(allPhi);
     }

@@ -28,9 +28,8 @@
                         <input type="date" class="form-control" ng-model="immunizations.givenDate">
                     </div>
                 </div>
-                <button ng-click="test()"></button>
-                <button ng-click="onSubmit('immunizationsParams', immunizations)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-                <button type="reset" ng-click="reset(immunization)" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                <button ng-click="onSubmit('immunizations', immunizations)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                <button type="reset" ng-click="reset('immunizations')" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
         </div>
 
