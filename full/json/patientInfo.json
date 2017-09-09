@@ -2,11 +2,16 @@
     "firstName": "John",
     "lastName": "Dickens",
     "gender": "male",
+    "dob": "02/06/1986",
     "bloodType": "A+",
     "height":"6.6 ft",
     "weight":"170 lbs",
     "phone": "443-410-3256",
     "email": "john.dc86@gmail.com",
     "emergencyContact": "Sarah Jones",
-    "emergencyPhoneNumber": "310-222-9876"
+    "emergencyPhoneNumber": "310-222-9876",
+    "allergy": "pollen, peanut, penicillin",
+    "street": "1123 Lehigh Road",
+    "city": "Bethlehem",
+    "zip": "18018"
 }

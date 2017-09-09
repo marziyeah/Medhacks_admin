@@ -5693,7 +5693,18 @@ body {
       border-width: 1px 2px; }
     .aside-menu .tab-content .tab-pane {
       padding: 0; }
-
+      
+    .profile-container {
+    text-align: center;
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
 .img-avatar {
   border-radius: 50em; }
 
@@ -7339,13 +7350,6 @@ base-chart.chart {
 .navbar-nav .active.dropdown-toggle:hover {
   color: #29363d; }
 
-.style1{
-  padding: 16px 16px 16px 20px;
-  
-}
-.style2{
-  padding-bottom: 16px;
-}
 .navbar-divider {
   background-color: rgba(0, 0, 0, 0.075); }
 
