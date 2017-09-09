@@ -1,91 +1,94 @@
-<div class="animated fadeIn">
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    Basic Profile
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-6">
-                            <p>First Name:</p>
-                            <p>Last Name:</p>
-                            <p>Phone:</p>
-                            <p>Email:</p>
-                            <p>Emergency Contact:</p>
-                            <p>Emergency Contact Phone Number:</p>
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <p>John</p>
-                            <p>Dickens</p>
-                            <p>443-410-3256</p>
-                            <p>john.dc86@gmail.com</p>
-                            <p>Sarah Jones</p>
-                            <p>310-222-9876</p>
+<div ng-controller="MainController">
+
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Basic Profile
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <p>First Name:</p>
+                                <p>Last Name:</p>
+                                <p>Phone:</p>
+                                <p>Email:</p>
+                                <p>Emergency Contact:</p>
+                                <p>Emergency Contact Phone Number:</p>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <p>{{patientInfo.firstName}}</p>
+                                <p>{{patientInfo.lastName}}</p>
+                                <p>{{patientInfo.phone}}</p>
+                                <p>{{patientInfo.email}}</p>
+                                <p>{{patientInfo.emergencyContact}}</p>
+                                <p>{{patientInfo.emergencyPhoneNumber}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <!--/.col-->
-        <div class="col-sm-6 col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    Medications
-                    <span class="badge badge-pill badge-danger float-right">4</span>
+        <div class="row">
+            <!--/.col-->
+            <div class="col-sm-6 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Medications
+                        <span class="badge badge-pill badge-danger float-right">4</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Ambian</p>
+                        <p>Amoxicicillin</p>
+                        <p>Advil</p>
+                        <p>Tynol</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p>Ambian</p>
-                    <p>Amoxicicillin</p>
-                    <p>Advil</p>
-                    <p>Tynol</p>
+            </div>
+
+            <!--/.col-->
+            <div class="col-sm-6 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Allergies and Intolerances
+                        <span class="badge badge-pill badge-danger float-right">4</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Pollen</p>
+                        <p>peanuts</p>
+                        <p>glucose</p>
+                        <p>Penicillin</p </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!--/.col-->
-        <div class="col-sm-6 col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    Allergies and Intolerances
-                    <span class="badge badge-pill badge-danger float-right">4</span>
-                </div>
-                <div class="card-body">
-                    <p>Pollen</p>
-                    <p>peanuts</p>
-                    <p>glucose</p>
-                    <p>Penicillin</p </div>
+        <div class="row">
+            <!--/.col-->
+            <div class="col-sm-6 col-md-6">
+                <div class="card border-secondary">
+                    <div class="card-header">
+                        Medical Imaging
+                    </div>
+                    <div class="card-body">
+                        <a href="http://localhost:8042/osimis-viewer/app/index.html?study=7e3a98bb-9acc8a9d-82dea211-2c0e226a-b846dc26" target="_blank">Head MRI</a>
+                        <button ng-click="test()" type="button" name="button"></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <!--/.col-->
-        <div class="col-sm-6 col-md-6">
-            <div class="card border-secondary">
-                <div class="card-header">
-                    Medical Imaging
-                </div>
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
-                    ea commodo consequat.
-                </div>
-            </div>
-        </div>
 
 
-        <!--/.col-->
-        <div class="col-sm-6 col-md-6">
-            <div class="card border-secondary">
-                <div class="card-header">
-                    Immunizations
-                </div>
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
-                    ea commodo consequat.
+            <!--/.col-->
+            <div class="col-sm-6 col-md-6">
+                <div class="card border-secondary">
+                    <div class="card-header">
+                        Immunizations
+                    </div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+                        ea commodo consequat.
+                    </div>
                 </div>
             </div>
         </div>
