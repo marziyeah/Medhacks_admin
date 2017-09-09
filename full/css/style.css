@@ -5693,18 +5693,7 @@ body {
       border-width: 1px 2px; }
     .aside-menu .tab-content .tab-pane {
       padding: 0; }
-      
-    .profile-container {
-    text-align: center;
-    width: 220px;
-    height: 220px;
-    overflow: hidden;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-}
+
 .img-avatar {
   border-radius: 50em; }
 
