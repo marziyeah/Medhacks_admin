@@ -32,6 +32,13 @@ angular
       label: 'Components'
     }
   })
+.state('app.components.calendar', {
+    templateUrl: 'views/common/calendar.html',
+    url: '/calendar',
+    ncyBreadcrumb: {
+      label: 'Calendar'
+    }
+  })
   .state('app.components.buttons', {
     url: '/buttons',
     templateUrl: 'views/components/buttons.html',
@@ -187,6 +194,14 @@ angular
     templateUrl: 'views/medical_imaging.html',
     ncyBreadcrumb: {
       label: 'Medical Imaging'
+    },
+    controller: "MainController"
+  })
+  .state('app.appointments', {
+    url: '/appointments',
+    templateUrl: 'views/components/appointments.html',
+    ncyBreadcrumb: {
+      label: 'Appointments'
     },
     controller: "MainController"
   })
