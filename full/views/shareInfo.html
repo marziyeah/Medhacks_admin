@@ -1,16 +1,48 @@
-<div class="col-sm-12">
-    <div class="card card-accent-success">
-        <div class="card-header">
-            Select Files To Share
-        </div>
-        <div class="style1">
-            <div ng-repeat="header in allDataHeaders">
-            <div class="style2">
-                 <input type="checkbox" name="button"> {{header}}</button>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card card-accent-success">
+            <div class="card-header">
+                Select Files To Share
             </div>
-           
+            <div class="style1">
+                <div ng-repeat="header in allDataHeaders">
+                    <div class="style2">
+                        <input type="checkbox" name="button"> {{header}}</button>
+                    </div>
+
+                </div>
+            </div>
+            <input type="text" name="" ng-model="pin" placeholder="Please enter a pin to verify">
+            <div style="color: red;" class="" ng-if="error">
+                {{error}}
+            </div>
+            <button type="button" name="button" ng-click="shareInfo()">Share Info</button>
         </div>
-        </div>
-        
     </div>
-</div>
+    <div class="col-sm-6">
+        <div class="card card-accent-success">
+            <div class="card-header">
+                See files shared with you
+            </div>
+            <div class="style1">
+                <div>
+                    <input type="text" ng-model="secretToken" placeholder="Secret Token">
+                </div>
+                <div>
+                    <input type="text" ng-model="secretPin" placeholder="Secret Pin">
+                </div>
+                <div style="color: red;" class="" ng-if="secretError">
+                    {{secretError}}
+                </div>
+                <button type="button" name="button" ng-click="unlockSecretInfo()">Enter Token and Pin</button>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="token">
+        Here is the token to give to your physician {{token}}
+    </div>
+
+    <div ng-if="link">
+        <a href="{{link}}" target="_blank">Here is the link to the information requested.</a>
+    </div>
