@@ -13,6 +13,13 @@ function MainController($scope, MainFactory) {
         $scope.medicalImaging = data;
     })
 
+    MainFactory.getAllPhi().then(function(PHI) {
+        $scope.allDataHeaders = Object.keys(PHI).map(function(key) {
+            return key;
+        })
+        // $scope.allPhi = PHI;
+    })
+
     $scope.onSubmit = function(type, data) {
         MainFactory.addImmunization(type, data).then(function(data) {
             $scope.immunizationRecords = data;
@@ -24,9 +31,4 @@ function MainController($scope, MainFactory) {
         $scope[type] = {};
     }
 
-    $scope.getAllPhi = function() {
-        MainFactory.getAllPhi().then(function(PHI) {
-            $scope.allPhi = PHI;
-        })
-    }
 }

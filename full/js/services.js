@@ -54,6 +54,6 @@ function MainFactory($http, $q) {
             immunizations: immunizations,
             medicalImaging: medicalImaging,
         }
-        return $q.resolve(immunizations);
+        return $q.resolve(allPhi);
     }
 }

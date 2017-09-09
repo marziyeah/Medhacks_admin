@@ -90,27 +90,7 @@ angular
     },
     //page subtitle goes here
     params: { subtitle: 'Welcome to ROOT powerfull Bootstrap & AngularJS UI Kit' },
-    resolve: {
-      loadPlugin: ['$ocLazyLoad', function ($ocLazyLoad) {
-        // you can lazy load files for an existing module
-        return $ocLazyLoad.load([
-          {
-            serie: true,
-            name: 'chart.js',
-            files: [
-              'bower_components/chart.js/dist/Chart.min.js',
-              'bower_components/angular-chart.js/dist/angular-chart.min.js'
-            ]
-          },
-        ]);
-      }],
-      loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-        // you can lazy load controllers
-        return $ocLazyLoad.load({
-          files: ['js/controllers/main.js']
-        });
-      }]
-    }
+    controller: "MainController",
   })
   .state('appSimple', {
     abstract: true,

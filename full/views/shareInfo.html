@@ -2,16 +2,9 @@
     <div class="card card-accent-success">
         <div class="card-header">
             Immunizations
-            <span class="badge badge-pill badge-danger float-right">{{immunizationRecords.length}}</span>
         </div>
-        {{medicalImaging}}
-        <div ng-repeat="immunization in immunizationRecords">
-            <div class="card-body">
-                Type: {{immunization.name}} <br>
-                Given By: {{immunization.givenBy}} <br>
-                Dosage: {{immunization.dosage}} <br>
-                Given Date: {{immunization.givenDate}} <br>
-            </div>
+        <div ng-repeat="header in allDataHeaders">
+            <input type="checkbox" name="button"> {{header}}</button>
         </div>
     </div>
 </div>
