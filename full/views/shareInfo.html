@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-sm-6">
-        <div class="card card-accent-success">
+    <div class="col-sm-6 col-centered" >
+        <div class="card ">
             <div class="card-header">
                 Select Files To Share
             </div>
@@ -12,11 +12,14 @@
 
                 </div>
             </div>
-            <input type="text" name="" ng-model="pin" placeholder="Please enter a pin to verify">
+          
+                <input type="text" name="" ng-model="pin" placeholder="Please enter a pin to verify" class="mytext">
+          
+            
             <div style="color: red;" class="" ng-if="error">
                 {{error}}
             </div>
-            <button type="button" name="button" ng-click="shareInfo()">Share Info</button>
+            <button type="button" name="button" ng-click="shareInfo()" class="mytext" >Share Info</button>
         </div>
     </div>
     <div class="col-sm-6" ng-if="token">

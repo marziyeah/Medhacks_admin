@@ -82,7 +82,8 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #151b1e;
-  background-color: #e4e5e6; }
+  background-color: rgba(142, 164, 185, 0.43);
+ }
 
 [tabindex="-1"]:focus {
   outline: none !important; }
@@ -2491,6 +2492,20 @@ tbody.collapse.show {
 .navbar-dark .navbar-text {
   color: rgba(255, 255, 255, 0.5); }
 
+.style1{
+  padding: 20px 20px 20px 20px;
+}  
+.style2{
+  padding-bottom: 20px; 
+}
+.mytext {
+  width:100%;
+  height:45px;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
 .card {
   position: relative;
   display: flex;
@@ -2524,7 +2539,7 @@ tbody.collapse.show {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: #f0f3f5;
+  background-color: rgba(99, 194, 222, 0.61);
   border-bottom: 1px solid #c2cfd6; }
 
 .card-footer {
