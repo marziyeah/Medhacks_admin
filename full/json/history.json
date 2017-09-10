@@ -1,0 +1,10 @@
+{
+    "disease": "Lung Cancer",
+    "surgery": "Knee surgery",
+    "drug": "Chemotherapy, Immunotherapy ",
+    "fam": "Dad with history of diabetes and high blood pressure. Mom with history of breast cancer",
+    "alc ?": "Yes, occasionally ",
+    "rDrugs? ":"No",
+    "Sex":"Yes"
+    
+}
