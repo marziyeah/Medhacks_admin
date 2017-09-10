@@ -32,81 +32,46 @@ angular
       label: 'Components'
     }
   })
-.state('app.components.calendar', {
+.state('app.calendar', {
     templateUrl: 'views/common/calendar.html',
     url: '/calendar',
     ncyBreadcrumb: {
       label: 'Calendar'
     }
   })
-  .state('app.components.buttons', {
-    url: '/buttons',
+  .state('app.components.pcp', {
+    url: '/pcp',
     templateUrl: 'views/components/buttons.html',
     ncyBreadcrumb: {
       label: 'PCP'
     }
   })
-  .state('app.components.social-buttons', {
-    url: '/social-buttons',
+  .state('app.components.oncologist', {
+    url: '/oncologist',
     templateUrl: 'views/components/social-buttons.html',
     ncyBreadcrumb: {
       label: 'Oncologist'
     }
   })
-  .state('app.components.cards', {
-    url: '/cards',
+  .state('app.components.radiologist', {
+    url: '/radiologist',
     templateUrl: 'views/components/cards.html',
     ncyBreadcrumb: {
       label: 'Radiologist'
     }
   })
-  .state('app.components.forms', {
-    url: '/forms',
+  .state('app.components.ophthalmologist', {
+    url: '/opthalmologist',
     templateUrl: 'views/components/forms.html',
     ncyBreadcrumb: {
       label: 'Ophthalmologist'
     }
   })
-  .state('app.components.switches', {
-    url: '/switches',
+  .state('app.components.dentist', {
+    url: '/dentist',
     templateUrl: 'views/components/switches.html',
     ncyBreadcrumb: {
       label: 'Dentist'
-    }
-  })
-  .state('app.components.tables', {
-    url: '/tables',
-    templateUrl: 'views/components/tables.html',
-    ncyBreadcrumb: {
-      label: 'Insurance Information'
-    }
-  })
-  .state('app.components.patient_history', {
-    url: '/font-awesome',
-    templateUrl: 'views/components/patient_history.html',
-    ncyBreadcrumb: {
-      label: 'Patient History'
-    }
-  })
-  .state('app.components.referrals', {
-    url: '/font-awesome',
-    templateUrl: 'views/components/referrals.html',
-    ncyBreadcrumb: {
-      label: 'Referrals'
-    }
-  })
-  .state('app.components.medications', {
-    url: '/font-awesome',
-    templateUrl: 'views/components/medications.html',
-    ncyBreadcrumb: {
-      label: 'Medications'
-    }
-  })
-  .state('app.components.Glasses', {
-    url: '/font-awesome',
-    templateUrl: 'views/components/Glasses.html',
-    ncyBreadcrumb: {
-      label: 'Glasses'
     }
   })
   .state('app.forms', {
@@ -179,6 +144,37 @@ angular
           files: ['js/controllers/charts.js']
         });
       }]
+    }
+  })
+  .state('app.tables', {
+    url: '/tables',
+    templateUrl: 'views/components/tables.html',
+    ncyBreadcrumb: {
+      label: 'Insurance Information'
+    }
+  })
+  .state('app.patient_history', {
+    url: '/patient_history',
+    templateUrl: 'views/components/patient_history.html',
+    ncyBreadcrumb: {
+      label: 'Patient History'
+    }
+  })
+  .state('app.referrals', {
+    url: '/referrals',
+    templateUrl: 'views/components/referrals.html',
+    controller: "MainController"
+  })
+  .state('app.medications', {
+    url: '/medications',
+    templateUrl: 'views/components/medications.html',
+    controller: "MainController"
+  })
+  .state('app.Glasses', {
+    url: '/glasses',
+    templateUrl: 'views/components/Glasses.html',
+    ncyBreadcrumb: {
+      label: 'Glasses'
     }
   })
   .state('app.immunizations', {

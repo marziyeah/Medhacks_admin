@@ -56,30 +56,38 @@
                 <button type="reset" ng-click="reset('immunizations')" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
         </div>
-         
-
-
     </div>
-
     <div class="col-sm-6">
         <div class="card">
             <div class="card-header">
                 <strong>Appointments</strong>
-                <span class="badge badge-pill badge-danger float-right">{{immunizationRecords.length}}</span>
+                <span class="badge badge-pill badge-danger float-right">{{appointments.length}}</span>
             </div>
-            <div ng-repeat="immunization in immunizationRecords">
+            <div ng-repeat="appointment in appointments">
                 <div class="card-body">
-                    <div ng-if="immunization.name">
-                        Name: {{immunization.name}}
+                    <div ng-if="appointment.examiner">
+                        Examiner: {{appointment.examiner}}
                     </div>
-                    <div ng-if="immunization.givenBy">
-                        Administered By: {{immunization.givenBy}}
+                    <div ng-if="appointment.type">
+                        Appointment Type: {{appointment.type}}
                     </div>
-                    <div ng-if="immunization.dosage">
-                        Dosage: {{immunization.dosage}}
+                    <div ng-if="appointment.status">
+                        Status: {{appointment.status}}
                     </div>
-                    <div ng-if="immunization.givenDate">
-                        Given Date: {{immunization.givenDate}}
+                    <div ng-if="appointment.date">
+                        Date: {{appointment.date}}
+                    </div>
+                    <div ng-if="appointment.street">
+                        Street: {{appointment.street}}
+                    </div>
+                    <div ng-if="appointment.city">
+                        City: {{appointment.city}}
+                    </div>
+                    <div ng-if="appointment.zip">
+                        Postal Code: {{appointment.zip}}
+                    </div>
+                    <div ng-if="appointment.notes">
+                        Notes: {{appointment.notes}}
                     </div>
                 </div>
             </div>
