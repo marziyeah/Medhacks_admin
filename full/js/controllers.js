@@ -27,6 +27,10 @@ function MainController($scope, MainFactory) {
         $scope.medications = data;
     })
 
+    MainFactory.getAppointments().then((data) => {
+        data.date = moment(data.date).format('MMMM Do, YYYY');
+        $scope.appointments = data;
+    })
 
     $scope.onSubmit = function(type) {
         MainFactory.addImmunization($scope.immunizations).then(function(data) {
@@ -35,11 +39,19 @@ function MainController($scope, MainFactory) {
         $scope[type] = {};
     }
 
-    $scope.createReferral = function() {
+    $scope.createReferral = function(type) {
         MainFactory.createReferral($scope.referral).then((data) => {
             data.startDate = moment(data.startDate).format('MMMM Do, YYYY');
             data.expirationDate = moment(data.expirationDate).format('MMMM Do, YYYY');
             $scope.Referrals.push(data);
+        })
+        $scope[type] = {};
+    }
+
+    $scope.createAppointment = function() {
+        MainFactory.createAppointment($scope.appointment).then((data) => {
+            data.date = moment(data.date).format('MMMM Do, YYYY');
+            $scope.appointments.push(data);
         })
     }
 

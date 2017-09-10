@@ -5,10 +5,16 @@ function MainFactory($http, $q) {
 
     let medicalImaging = [
         {
-            url: "http://localhost:8042/osimis-viewer/app/index.html?study=7e3a98bb-9acc8a9d-82dea211-2c0e226a-b846dc26"
+            url: "http://localhost:8042/osimis-viewer/app/index.html?study=52df32fb-efc78b4d-5f603167-122adc9a-c42b210e"
         },
         {
-            url: "http://localhost:8042/osimis-viewer/app/index.html?study=17dba82f-d91dd6eb-84dc046b-81131b64-ad1eb0ed"
+            url: "http://localhost:8042/osimis-viewer/app/index.html?series=c79fc335-c154a0ed-9075bbe2-e7757eb5-ccd1ac78"
+        },
+        {
+            url: "http://localhost:8042/osimis-viewer/app/index.html?study=8a77fe1f-a9c9c5a2-694e0c6e-f0a80dd6-a9fdc5ed"
+        },
+        {
+            url: "http://localhost:8042/osimis-viewer/app/index.html?study=2c2d9d92-2426e483-ce5a3dc2-dea09ed0-6f2bafa5"
         }
 
     ];
@@ -35,6 +41,8 @@ function MainFactory($http, $q) {
         unlockSecretInfo: unlockSecretInfo,
         getMedications: getMedications,
         createMedication: createMedication,
+        getAppointments: getAppointments,
+        createAppointment: createAppointment,
     };
 
     return MainFactory;
@@ -115,6 +123,21 @@ function MainFactory($http, $q) {
         medication: medication
       }
       return $http({method:"POST", url: "http://localhost:8000/medications", headers: headers, data: data}).then((success) => {
+        return success.data;
+      })
+    };
+
+    function createAppointment(appointment) {
+      var data = {
+        appointment: appointment
+      }
+      return $http({method:"POST", url: "http://localhost:8000/appointments", headers: headers, data: data}).then((success) => {
+        return success.data;
+      });
+    }
+
+    function getAppointments() {
+      return $http({method:"GET", url: "http://localhost:8000/appointments", headers: headers}).then((success) => {
         return success.data;
       })
     }

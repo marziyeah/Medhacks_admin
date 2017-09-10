@@ -2,7 +2,7 @@
 
     <div class="animated fadeIn">
 
-       <div class="row">
+        <div class="row">
             <div class="col-sm-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
@@ -39,14 +39,14 @@
                                 <p>{{patientInfo.emergencyPhoneNumber}}</p>
                                 <p>{{patientInfo.allergy}}</p>
                             </div>
-                             <div class="col-sm-4 col-md-4" id="profile-container">
-                            <image  src="img/png.jpg" style="border-radius: 100px;" />
-                             </div>
+                            <div class="col-sm-4 col-md-4" id="profile-container">
+                                <image src="img/png.jpg" style="border-radius: 100px;" />
+                            </div>
 
                         </div>
 
-                    <div class="row">
-                       <div class="col-sm-4 col-md-4">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4">
                                 <p>Street: {{patientInfo.street}}</p>
                             </div>
                             <div class="col-sm-4 col-md-4">
@@ -58,11 +58,176 @@
 
                             </div>
 
-                     </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
-       </div>
+        </div>
     </div>
+    <div class="animated fadeIn">
+        <div class="card" ng-controller="trafficDemoCtrl">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h4 class="card-title mb-0">Vitals</h4>
+                        <div class="small text-muted">September 2017</div>
+                    </div>
+                    <!--/.col-->
+                    <div class="col-sm-7 hidden-sm-down">
+                        <button type="button" class="btn btn-primary float-right"><i class="icon-cloud-download"></i>
+                    </button>
+                        <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group mr-3" data-toggle="buttons" aria-label="First group">
+                                <label class="btn btn-outline-secondary">
+                                <input type="radio" name="options" id="option1">Day
+                            </label>
+                                <label class="btn btn-outline-secondary active">
+                                <input type="radio" name="options" id="option2" checked>Month
+                            </label>
+                                <label class="btn btn-outline-secondary">
+                                <input type="radio" name="options" id="option3">Year
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.col-->
+                </div>
+                <!--/.row-->
+                <div class="chart-wrapper" style="height:300px;margin-top:40px;">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-click="onClick" chart-options="options" chart-colors="colors" height="300"></canvas>
+                </div>
+            </div>
+            <div class="card-footer">
+                <ul>
+                    <li>
+                        <div class="text-muted">Visits</div>
+                        <strong>Blood Sugar</strong>
+                        <div class="progress progress-xs mt-2">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                    <li class="hidden-sm-down">
+                        <div class="text-muted">Unique</div>
+                        <strong>Cholesterol</strong>
+                        <div class="progress progress-xs mt-2">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 90%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Fitness Tracker
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-4">
+
+                                <!--/.row-->
+                                <hr class="mt-0">
+                                <ul class="horizontal-bars" ng-controller="horizontalBarsCtrl">
+                                    <li ng-repeat="row in data">
+                                        <div class="title">
+                                            {{ row.day }}
+                                        </div>
+                                        <div class="bars">
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: {{ row.new }}%" aria-valuenow="{{ row.new }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: {{ row.recurring }}%" aria-valuenow="{{ row.recurring }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="legend">
+                                        <span class="badge badge-pill badge-info"></span>
+                                        <small>Calories</small>&nbsp;
+                                        <span class="badge badge-pill badge-danger"></span>
+                                        <small>Steps</small>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/.col-->
+                        </div>
+                        <!--/.row-->
+                        <br/>
+                        <table class="table table-hover table-outline mb-0 hidden-sm-down">
+                            <thead class="thead-default">
+                                <tr>
+                                    <th class="text-center"><i class="icon-people"></i>
+                                    </th>
+                                    <th>Doctor</th>
+                                    <th class="text-center">Country</th>
+                                    <th>Satisfaction</th>
+                                    <th class="text-center">Payment Method</th>
+                                    <th>Activity</th>
+                                </tr>
+                            </thead>
+                            <tbody ng-controller="usersTableCtrl">
+                                <tr ng-repeat="user in users">
+                                    <td class="text-center">
+                                        <div class="avatar">
+                                            <img ng-src="img/avatars/{{ user.avatar }}" class="img-avatar" alt="admin@bootstrapmaster.com">
+                                            <span class="avatar-status" ng-class="{ 'badge-success' : user.status == 'active',
+                    'badge-warning' : user.status == 'away',
+                    'badge-danger'  : user.status == 'busy',
+                    'badge-default' : user.status == 'offline' }"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>{{ user.name }}</div>
+                                        <div class="small text-muted">
+                                            <span ng-if="user.new == true">New</span>
+                                            <span ng-if="user.new == false">Recurring</span> | Registered: {{ user.registered }}</div>
+                                    </td>
+                                    <td class="text-center">
+                                        <img ng-src="img/flags/{{ user.flag }}" alt="{{ user.country }}" style="height:24px;">
+                                    </td>
+                                    <td>
+                                        <div class="clearfix">
+                                            <div class="float-left">
+                                                <strong>{{ user.usage }}%</strong>
+                                            </div>
+                                            <div class="float-right">
+                                                <small class="text-muted">{{ user.period }}</small>
+                                            </div>
+                                        </div>
+                                        <div class="progress progress-xs">
+                                            <div class="progress-bar" ng-class="{ 'bg-info'    : user.usage <= 25,
+                      'bg-success' : user.usage > 25 && user.usage <= 50,
+                      'bg-warning' : user.usage > 50 && user.usage <= 75,
+                      'bg-danger'  : user.usage > 75 && user.usage <= 100 }" value="{{ user.usage }}" role="progressbar" style="width: {{ user.usage }}%" aria-valuenow="{{ user.usage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <i class="fa" ng-class="{ 'fa-cc-mastercard' : user.payment == 'mastercard',
+                    'fa-cc-visa' : user.payment == 'visa',
+                    'fa-cc-amex' : user.payment == 'amex',
+                    'fa-cc-diners-club' : user.payment == 'diners',
+                    'fa-cc-stripe' : user.payment == 'stripe',
+                    'fa-paypal' : user.payment == 'paypal',
+                    'fa-google-wallet' : user.payment == 'google' }" style="font-size:24px"></i>
+                                    </td>
+                                    <td>
+                                        <div class="small text-muted">Last login</div>
+                                        <strong>{{ user.activity }}</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--/.col-->
+        </div>
+        <!--/.row-->
+
+    </div>
+
 </div>

@@ -9,51 +9,51 @@
             <div class="card-body ">
                 <div class="form-group">
                     <label for="company">Examiner</label>
-                    <input type="text" class="form-control" ng-model="immunizations.name" placeholder="Dr. John Doe">
+                    <input type="text" class="form-control" ng-model="appointment.examiner" placeholder="Dr. John Doe">
                 </div>
 
                 <div class="form-group">
                     <label for="street">Appointment Type</label>
-                    <input type="text" class="form-control" ng-model="immunizations.givenBy" placeholder="Admition/Clinic/FollowUp/Imaging/Lab/Pharmacy">
+                    <input type="text" class="form-control" ng-model="appointment.appointmentType" placeholder="Admition/Clinic/FollowUp/Imaging/Lab/Pharmacy">
                 </div>
 
                 <div class="form-group">
                     <label for="city">Status</label>
-                    <input type="text" class="form-control" ng-model="immunizations.dosage" placeholder="Scheduled/Missed/Canceled">
+                    <input type="text" class="form-control" ng-model="appointment.appointmentStatus" placeholder="Scheduled/Missed/Canceled">
                 </div>
 
                 <div class="row">
                     <div class="form-group col-sm-6">
                         <label for="postal-code">Date</label>? <i class="icon-calendar"></i>
-                        <input type="date" class="form-control" ng-model="immunizations.givenDate">
+                        <input type="date" class="form-control" ng-model="appointment.date">
                     </div>
                 </div>
                 <div class="form-group">
                         <label for="street">Street</label>
-                        <input type="text" class="form-control" id="street" placeholder="Enter street name">
+                        <input type="text" class="form-control" ng-model="appointment.street" placeholder="Enter street name">
                     </div>
 
                     <div class="row">
 
                         <div class="form-group col-sm-8">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" placeholder="Enter your city">
+                            <input type="text" class="form-control" ng-model="appointment.city" placeholder="Enter your city">
                         </div>
 
                         <div class="form-group col-sm-4">
                             <label for="postal-code">Postal Code</label>
-                            <input type="text" class="form-control" id="postal-code" placeholder="Postal Code">
+                            <input type="text" class="form-control" ng-model="appointment.postalCode" placeholder="Postal Code">
                         </div>
 
                     </div>
                     <!--/.row-->
                     <div class="form-group">
                         <label for="street">Notes</label>
-                        <input type="text" class="form-control" id="street" >
+                        <input type="text" class="form-control" ng-model="appointment.notes" >
                     </div>
 
-                <button ng-click="onSubmit('immunizations', immunizations)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-                <button type="reset" ng-click="reset('immunizations')" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                <button ng-click="createAppointment('appointments', appointments)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                <button type="reset" ng-click="reset('appointments')" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
         </div>
     </div>
@@ -68,11 +68,11 @@
                     <div ng-if="appointment.examiner">
                         Examiner: {{appointment.examiner}}
                     </div>
-                    <div ng-if="appointment.type">
-                        Appointment Type: {{appointment.type}}
+                    <div ng-if="appointment.appointmentType">
+                        Appointment Type: {{appointment.appointmentType}}
                     </div>
                     <div ng-if="appointment.status">
-                        Status: {{appointment.status}}
+                        Status: {{appointment.appointmentStatus}}
                     </div>
                     <div ng-if="appointment.date">
                         Date: {{appointment.date}}
@@ -84,7 +84,7 @@
                         City: {{appointment.city}}
                     </div>
                     <div ng-if="appointment.zip">
-                        Postal Code: {{appointment.zip}}
+                        Postal Code: {{appointment.postalCode}}
                     </div>
                     <div ng-if="appointment.notes">
                         Notes: {{appointment.notes}}
