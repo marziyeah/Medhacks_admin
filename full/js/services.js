@@ -25,12 +25,16 @@ function MainFactory($http, $q) {
 
     var MainFactory = {
         getPatientInfo: getPatientInfo,
+        getReferrals: getReferrals,
+        createReferral: createReferral,
         getImmunizationRecords: getImmunizationRecords,
         addImmunization: addImmunization,
         getMedicalImaging: getMedicalImaging,
         getAllPhi: getAllPhi,
         generateToken: generateToken,
         unlockSecretInfo: unlockSecretInfo,
+        getMedications: getMedications,
+        createMedication: createMedication,
     };
 
     return MainFactory;
@@ -81,8 +85,37 @@ function MainFactory($http, $q) {
       return $http({method:'POST', url: "http://localhost:8000/verifySecretCombo", headers: headers, data: data}).then((success) => {
         return success.data.url;
       }, (failure) => {
-        console.log('lululul')
         return $q.reject(failure.data.errors);
+      });
+    };
+
+    function getReferrals() {
+        return $http({method: 'GET', url: 'http://localhost:8000/referrals', headers: headers}).then((referrals) => {
+            return referrals.data;
+        });
+    };
+
+    function createReferral(referral) {
+      var data = {
+        referral: referral
+      }
+      return $http({method:"POST", url: "http://localhost:8000/referrals", headers: headers, data: data}).then((success) => {
+        return success.data;
+      })
+    }
+
+    function getMedications() {
+        return $http({method: 'GET', url: 'http://localhost:8000/medications', headers: headers}).then((referrals) => {
+            return referrals.data;
+        });
+    };
+
+    function createMedication(medication) {
+      var data = {
+        medication: medication
+      }
+      return $http({method:"POST", url: "http://localhost:8000/medications", headers: headers, data: data}).then((success) => {
+        return success.data;
       })
     }
 }

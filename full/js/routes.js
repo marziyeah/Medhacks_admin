@@ -84,12 +84,11 @@ angular
   .state('app.shareInfo', {
     url: '/shareInfo',
     templateUrl: 'views/shareInfo.html',
-    //page title goes here
-    ncyBreadcrumb: {
-      label: 'Home',
-    },
-    //page subtitle goes here
-    params: { subtitle: 'Welcome to ROOT powerfull Bootstrap & AngularJS UI Kit' },
+    controller: "MainController",
+  })
+  .state('app.redeemInfo', {
+    url: '/redeemInfo',
+    templateUrl: 'views/redeemInfo.html',
     controller: "MainController",
   })
   .state('appSimple', {

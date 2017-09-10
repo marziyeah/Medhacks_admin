@@ -19,30 +19,7 @@
             <button type="button" name="button" ng-click="shareInfo()">Share Info</button>
         </div>
     </div>
-    <div class="col-sm-6">
-        <div class="card card-accent-success">
-            <div class="card-header">
-                See files shared with you
-            </div>
-            <div class="style1">
-                <div>
-                    <input type="text" ng-model="secretToken" placeholder="Secret Token">
-                </div>
-                <div>
-                    <input type="text" ng-model="secretPin" placeholder="Secret Pin">
-                </div>
-                <div style="color: red;" class="" ng-if="secretError">
-                    {{secretError}}
-                </div>
-                <button type="button" name="button" ng-click="unlockSecretInfo()">Enter Token and Pin</button>
-            </div>
-        </div>
+    <div class="col-sm-6" ng-if="token">
+        Here is the token to give to your physician: <br> {{token}}
     </div>
-
-    <div ng-if="token">
-        Here is the token to give to your physician {{token}}
-    </div>
-
-    <div ng-if="link">
-        <a href="{{link}}" target="_blank">Here is the link to the information requested.</a>
-    </div>
+</div>
