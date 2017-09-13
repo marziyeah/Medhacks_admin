@@ -43,9 +43,23 @@ function MainFactory($http, $q) {
         createMedication: createMedication,
         getAppointments: getAppointments,
         createAppointment: createAppointment,
+        addInfo: addInfo,
+        getAllInfo: getAllInfo,
     };
 
     return MainFactory;
+
+    function getAllInfo() {
+        return $http({method: "GET", url: 'http://localhost:8000/info', headers: headers}).then((success) => {
+            return success.data;
+        })
+    }
+
+    function addInfo(type, data) {
+        return $http({method: 'POST', url: `http://localhost:8000/${type}`, headers: headers, data: {log: data}}).then((success) => {
+            return success.data;
+        })
+    }
 
     function getPatientInfo() {
         return $http.get('../json/patientInfo.json').then(function(patientInfo) {

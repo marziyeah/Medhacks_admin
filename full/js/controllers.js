@@ -32,6 +32,17 @@ function MainController($scope, MainFactory) {
         $scope.appointments = data;
     })
 
+    MainFactory.getAllInfo().then((data) => {
+        $scope.clinicalInfo = data;
+    })
+
+    $scope.onSubmit = function(type, data) {
+        MainFactory.addInfo(type, data).then(function(data) {
+            $scope.clinicalInfo[type].push(data);
+        })
+    }
+
+
     $scope.onSubmit = function(type) {
         MainFactory.addImmunization($scope.immunizations).then(function(data) {
             $scope.immunizationRecords.push(data);
