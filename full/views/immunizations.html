@@ -28,7 +28,7 @@
                         <input type="date" class="form-control" ng-model="immunizations.givenDate">
                     </div>
                 </div>
-                <button ng-click="onSubmit('immunizations', immunizations)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                <button ng-click="onSubmit('Immunization', immunizations)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
                 <button type="reset" ng-click="reset('immunizations')" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
         </div>
@@ -39,9 +39,9 @@
         <div class="card">
             <div class="card-header">
                 <strong>Immunizations</strong>
-                <span class="badge badge-pill badge-danger float-right">{{immunizationRecords.length}}</span>
+                <span class="badge badge-pill badge-danger float-right">{{clinicalInfo.immunizations.length}}</span>
             </div>
-            <div ng-repeat="immunization in immunizationRecords">
+            <div ng-repeat="immunization in clinicalInfo.immunizations">
                 <div class="card-body">
                     <div ng-if="immunization.name">
                         Name: {{immunization.name}}

@@ -23,7 +23,7 @@
                 </div>
 
 
-                <button ng-click="createMedication()" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                <button ng-click="onSubmit('Medication', medication)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
                 <button type="reset" ng-click="reset('medication')" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
         </div>
@@ -34,9 +34,9 @@
         <div class="card">
             <div class="card-header">
                 <strong>Medications</strong>
-                <span class="badge badge-pill badge-danger float-right">{{medicationRecords.length}}</span>
+                <span class="badge badge-pill badge-danger float-right">{{clinicalInfo.medications.length}}</span>
             </div>
-            <div ng-repeat="medication in medications">
+            <div ng-repeat="medication in clinicalInfo.medications">
                 <div class="card-body">
                     <div>
                         Medication: {{medication.medication}}

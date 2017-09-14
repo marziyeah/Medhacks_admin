@@ -8,29 +8,7 @@ function MainController($scope, MainFactory) {
         $scope.patientInfo = data;
     })
 
-    MainFactory.getImmunizationRecords().then(function(data) {
-        data.forEach(function(data) {
-            data.givenDate = moment(data.givenDate).format('MMMM Do, YYYY');
-        })
-        $scope.immunizationRecords = data;
-    })
-
-    MainFactory.getReferrals().then((data) => {
-        data.forEach(function(data) {
-            data.startDate = moment(data.startDate).format('MMMM Do, YYYY');
-            data.expirationDate = moment(data.expirationDate).format('MMMM Do, YYYY');
-        })
-        $scope.Referrals = data;
-    })
-
-    MainFactory.getMedications().then((data) => {
-        $scope.medications = data;
-    })
-
-    MainFactory.getAppointments().then((data) => {
-        data.date = moment(data.date).format('MMMM Do, YYYY');
-        $scope.appointments = data;
-    })
+    // data.givenDate = moment(data.givenDate).format('MMMM Do, YYYY');
 
     MainFactory.getAllInfo().then((data) => {
         $scope.clinicalInfo = data;
@@ -38,39 +16,10 @@ function MainController($scope, MainFactory) {
 
     $scope.onSubmit = function(type, data) {
         MainFactory.addInfo(type, data).then(function(data) {
-            $scope.clinicalInfo[type].push(data);
+            $scope.clinicalInfo[type.toLowerCase() + "s"].push(data);
         })
     }
 
-
-    $scope.onSubmit = function(type) {
-        MainFactory.addImmunization($scope.immunizations).then(function(data) {
-            $scope.immunizationRecords.push(data);
-        });
-        $scope[type] = {};
-    }
-
-    $scope.createReferral = function(type) {
-        MainFactory.createReferral($scope.referral).then((data) => {
-            data.startDate = moment(data.startDate).format('MMMM Do, YYYY');
-            data.expirationDate = moment(data.expirationDate).format('MMMM Do, YYYY');
-            $scope.Referrals.push(data);
-        })
-        $scope[type] = {};
-    }
-
-    $scope.createAppointment = function() {
-        MainFactory.createAppointment($scope.appointment).then((data) => {
-            data.date = moment(data.date).format('MMMM Do, YYYY');
-            $scope.appointments.push(data);
-        })
-    }
-
-    $scope.createMedication = function() {
-        MainFactory.createMedication($scope.medication).then((data) => {
-            $scope.medications.push(data);
-        })
-    }
 
     MainFactory.getMedicalImaging().then(function(data) {
         $scope.medicalImaging = data;
@@ -113,6 +62,4 @@ function MainController($scope, MainFactory) {
             })
         }
     }
-
-    // TODO: make a schedule appointment function
 }

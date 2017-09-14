@@ -28,7 +28,7 @@
                         <input type="number" class="form-control" ng-model="referral.numberOfVisits">
                     </div>
                 </div>
-                <button ng-click="createReferral('referral', referral)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                <button ng-click="onSubmit('Tester', referral)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
                 <button type="reset" ng-click="reset('referral')" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
         </div>
@@ -39,21 +39,21 @@
         <div class="card card-accent-success">
             <div class="card-header">
                 <strong>Referrals</strong>
-                <span class="badge badge-pill badge-danger float-right">{{Referrals.length}}</span>
+                <span class="badge badge-pill badge-danger float-right">{{clinicalInfo.testers.length}}</span>
             </div>
-            <div ng-repeat="referral in Referrals">
+            <div ng-repeat="referral in clinicalInfo.testers">
                 <div class="card-body">
                     <div>
-                        Name: {{referral.doctor}}
+                        Name: {{referral.log.doctor}}
                     </div>
                     <div>
-                        Start Date: {{referral.startDate}}
+                        Start Date: {{referral.log.startDate}}
                     </div>
                     <div>
-                        Expiration Date: {{referral.expirationDate}}
+                        Expiration Date: {{referral.log.expirationDate}}
                     </div>
                     <div>
-                        Number Of Visits: {{referral.numberOfVisits}}
+                        Number Of Visits: {{referral.log.numberOfVisits}}
                     </div>
                 </div>
             </div>

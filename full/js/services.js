@@ -31,17 +31,13 @@ function MainFactory($http, $q) {
 
     var MainFactory = {
         getPatientInfo: getPatientInfo,
-        getReferrals: getReferrals,
         createReferral: createReferral,
-        getImmunizationRecords: getImmunizationRecords,
         addImmunization: addImmunization,
         getMedicalImaging: getMedicalImaging,
         getAllPhi: getAllPhi,
         generateToken: generateToken,
         unlockSecretInfo: unlockSecretInfo,
-        getMedications: getMedications,
         createMedication: createMedication,
-        getAppointments: getAppointments,
         createAppointment: createAppointment,
         addInfo: addInfo,
         getAllInfo: getAllInfo,
@@ -56,7 +52,7 @@ function MainFactory($http, $q) {
     }
 
     function addInfo(type, data) {
-        return $http({method: 'POST', url: `http://localhost:8000/${type}`, headers: headers, data: {log: data}}).then((success) => {
+        return $http({method: 'POST', url: `http://localhost:8000/info`, headers: headers, data: {log: data, type: type}}).then((success) => {
             return success.data;
         })
     }
@@ -72,12 +68,6 @@ function MainFactory($http, $q) {
             return success.data;
         });
     }
-
-    function getImmunizationRecords() {
-        return $http({method: 'GET', url: 'http://localhost:8000/immunizations', headers: headers}).then((immunizations) => {
-            return immunizations.data;
-        });
-    };
 
     function getMedicalImaging() {
         return $q.resolve(medicalImaging);
@@ -111,12 +101,6 @@ function MainFactory($http, $q) {
       });
     };
 
-    function getReferrals() {
-        return $http({method: 'GET', url: 'http://localhost:8000/referrals', headers: headers}).then((referrals) => {
-            return referrals.data;
-        });
-    };
-
     function createReferral(referral) {
       var data = {
         referral: referral
@@ -125,12 +109,6 @@ function MainFactory($http, $q) {
         return success.data;
       })
     }
-
-    function getMedications() {
-        return $http({method: 'GET', url: 'http://localhost:8000/medications', headers: headers}).then((referrals) => {
-            return referrals.data;
-        });
-    };
 
     function createMedication(medication) {
       var data = {
@@ -148,11 +126,5 @@ function MainFactory($http, $q) {
       return $http({method:"POST", url: "http://localhost:8000/appointments", headers: headers, data: data}).then((success) => {
         return success.data;
       });
-    }
-
-    function getAppointments() {
-      return $http({method:"GET", url: "http://localhost:8000/appointments", headers: headers}).then((success) => {
-        return success.data;
-      })
     }
 }
